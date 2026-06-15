@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../tether-c6-ble"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"ESP-IDF": {
+				"path": "bash",
+				"args": [
+					"--rcfile",
+					"/home/jermybird/.espressif/v6.0/esp-idf/export.sh"
+				]
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "ESP-IDF"
+	}
+}

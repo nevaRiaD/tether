@@ -1,0 +1,14 @@
+dependencies:
+  idf:
+    version: '>=5.3.0'
+  joltwallet/littlefs: ^1.14.8
+  lvgl/lvgl:
+    version: 9.2.0
+  espressif/esp_lvgl_port:
+    version: 2.7.2
+  waveshare/esp32_p4_wifi6_touch_lcd_7b:
+    version: 1.0.2
+  espressif/es8311: '*'
+  espressif/esp_lcd_ek79007: '*'
+  espressif/esp_lcd_touch_gt911: '*'
+  espressif/esp_codec_dev: '*'

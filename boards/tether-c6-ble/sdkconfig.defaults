@@ -1,0 +1,31 @@
+CONFIG_BT_ENABLED=y
+CONFIG_BT_NIMBLE_ENABLED=y
+CONFIG_BT_NIMBLE_HCI_EVT_BUF_SIZE=70
+CONFIG_BT_NIMBLE_EXT_ADV=y
+CONFIG_BT_NIMBLE_MAX_CONNECTIONS=30
+CONFIG_BT_NIMBLE_GATT_MAX_PROCS=70
+CONFIG_BT_NIMBLE_MSYS_1_BLOCK_COUNT=100
+CONFIG_BT_NIMBLE_OPTIMIZE_MULTI_CONN=y
+CONFIG_BT_NIMBLE_LOG_LEVEL_WARNING=y
+CONFIG_BT_NIMBLE_BLE_POWER_CONTROL=y
+
+# for irk bonding to store stable identity
+CONFIG_BT_NIMBLE_NVS_PERSIST=y
+
+# Bond capacity: phones + tags share these slots.
+# RESOLV_LIST_SIZE is the controller's HW resolving list and is hardware-capped
+# at 5 on the C6 (Kconfig `range 1 5`) — it CANNOT track MAX_BONDS=10. We set it
+# to the max (5). Bonds beyond the list still work via host-side RPA resolution
+# from NVS; only controller-side HW resolution is unavailable for the overflow.
+# If >5 RPA peers (iPhones) bond, the surplus log "failed to configure restored
+# IRK" at sync — non-fatal. Tags use public/static addresses, so they don't rely
+# on the resolving list.
+CONFIG_BT_NIMBLE_MAX_BONDS=10
+CONFIG_BT_NIMBLE_MAX_CCCDS=20
+CONFIG_BT_LE_LL_RESOLV_LIST_SIZE=5
+
+# Primary console on UART0 so REPL reads from /dev/ttyUSB0 (CP2102 bridge)
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+# CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG is not set
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
+# CONFIG_ESP_CONSOLE_SECONDARY_USB_SERIAL_JTAG is not set
