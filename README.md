@@ -2,6 +2,8 @@
 
 A multi-board ESP32 system that keeps a "tag" within range of a base station and alerts when the link is broken or motion is detected.
 
+Tether was made as a capstone project for my UCLA 180DW capstone course. I worked with 4 other members to develop this project. I primarily worked on the BLE and SDIO.
+
 ## Description
 
 Tether is firmware for a three-board proximity and motion monitoring system. A central
